@@ -17,10 +17,10 @@
     border: 1px solid black;
 
     grid-template-areas: "dashboard-leftside header-section header-section header-section header-section"
-    "dashboard-leftside . . . ."
-    "dashboard-leftside . . . ."
-    "dashboard-leftside . . . ."
-    "dashboard-leftside . . . .";
+    "dashboard-leftside main-section main-section main-section info-section"
+    "dashboard-leftside main-section main-section main-section info-section"
+    "dashboard-leftside main-section main-section main-section info-section"
+    "dashboard-leftside main-section main-section main-section info-section";
 }
 
 #dashboard-leftside {
@@ -137,11 +137,20 @@
 .icon {
     height: auto;
     width: 30px;
+    min-width: 30px
 }
 
 .header-lower {
     display: flex;
     justify-content: space-between;
+    /*
+    border: 1px solid blue;
+    border-radius: 15px;
+    */
+    padding: 6px;
+    margin-left: 10px;
+    margin-right: 10px;
+    box-shadow: 0 0 5px #ccc;
 }
 
 .header-lower-left {
@@ -200,4 +209,95 @@
     background-color: #38bdf8;
     color: white;
     font-weight: bolder;
+}
+
+
+
+
+
+#main-section {
+    grid-area: main-section;
+    background-color: rgba(211, 211, 211, 0.582);
+
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    grid-template-rows: repeat(auto-fill, minmax(200px, 1fr))
+}
+
+.text-card {
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    padding-top: 20px;
+    padding-right: 30px;
+    box-shadow: 0 0 3px #ccc;
+    border-left: 5px solid yellow;
+    border-radius: 5px;
+    background-color: white;
+}
+
+
+
+#info-section {
+    grid-area: info-section;
+    background-color: rgba(211, 211, 211, 0.582);
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    padding-top: 50px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.info-header {
+    font-size: 24px;
+    align-self: start;
+}
+
+.announcements-subheader {
+    font-size: 26px;
+}
+
+.announcements {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    border-bottom: 1px solid gray;
+    background-color: white;
+    box-shadow: 0 0 3px #ccc;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 30px;
+}
+
+.info-announcement-item {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-bottom: 1px solid gray;
+}
+
+
+
+.trending {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.trending-item {
+    display: flex;
+    flex-direction: row;
+
+}
+
+.trending-image {
+    width: 70px;
+    height: auto;
 }
